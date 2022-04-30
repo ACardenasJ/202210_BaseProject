@@ -25,17 +25,15 @@ export class PlantsComponent implements OnInit {
   getTipoPlanta(plants: Array<Plants>):void{
     for(let planta of plants){
       if(planta.tipo == 'Interior'){
-        this.tipoPlanta['Interior'] += 1;
+        this.tipoPlanta['Interior']+=1;
       }
       else{
-        this.tipoPlanta['Exterior'] += 1;
+        this.tipoPlanta['Exterior']+=1;
       }
     }
   }
 
   ngOnInit() {
     this.getPlants();
-
   }
-
 }

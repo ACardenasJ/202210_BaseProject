@@ -1,7 +1,60 @@
 <testExecutions version="1">
+  <file path="src/app/plants/plants.service.spec.ts">
+    <testCase name="PlantsService should be created" duration="50">
+      <failure message="Error">NullInjectorError: R3InjectorError(DynamicTestModule)[PlantsService -&gt; HttpClient -&gt; HttpClient]: 
+  NullInjectorError: No provider for HttpClient!
+error properties: Object({ ngTempTokenPath: null, ngTokenPath: [ 'PlantsService', 'HttpClient', 'HttpClient' ] })
+NullInjectorError: R3InjectorError(DynamicTestModule)[PlantsService -&gt; HttpClient -&gt; HttpClient]: 
+  NullInjectorError: No provider for HttpClient!
+    at NullInjector.get (node_modules/@angular/core/fesm2015/core.mjs:11120:1)
+    at R3Injector.get (node_modules/@angular/core/fesm2015/core.mjs:11287:1)
+    at R3Injector.get (node_modules/@angular/core/fesm2015/core.mjs:11287:1)
+    at injectInjectorOnly (node_modules/@angular/core/fesm2015/core.mjs:4765:1)
+    at ɵɵinject (node_modules/@angular/core/fesm2015/core.mjs:4769:1)
+    at Object.PlantsService_Factory [as factory] (ng:///PlantsService/ɵfac.js:4:41)
+    at R3Injector.hydrate (node_modules/@angular/core/fesm2015/core.mjs:11457:1)
+    at R3Injector.get (node_modules/@angular/core/fesm2015/core.mjs:11276:1)
+    at NgModuleRef.get (node_modules/@angular/core/fesm2015/core.mjs:21832:1)
+    at TestBedRender3.inject (node_modules/@angular/core/fesm2015/testing.mjs:1719:1)
+
+Error: Expected undefined to be truthy.
+    at &lt;Jasmine&gt;
+    at UserContext.&lt;anonymous&gt; (src/app/plants/plants.service.spec.ts:14:21)
+    at _ZoneDelegate.invoke (node_modules/zone.js/fesm2015/zone.js:372:1)
+    at ProxyZoneSpec.onInvoke (node_modules/zone.js/fesm2015/zone-testing.js:287:1)
+</failure>
+    </testCase>
+  </file>
   <file path="src/app/app.component.spec.ts">
-    <testCase name="AppComponent should have as title 'base-project'" duration="118"/>
-    <testCase name="AppComponent should create the app" duration="14"/>
-    <testCase name="AppComponent should render title" duration="13"/>
+    <testCase name="AppComponent should have as title 'base-project'" duration="47"/>
+    <testCase name="AppComponent should create the app" duration="12"/>
+    <testCase name="AppComponent should render title" duration="6">
+      <failure message="Error">Error: Expected undefined to contain 'base-project app is running!'.
+    at &lt;Jasmine&gt;
+    at UserContext.&lt;anonymous&gt; (src/app/app.component.spec.ts:29:66)
+    at _ZoneDelegate.invoke (node_modules/zone.js/fesm2015/zone.js:372:1)
+    at ProxyZoneSpec.onInvoke (node_modules/zone.js/fesm2015/zone-testing.js:287:1)
+</failure>
+    </testCase>
+  </file>
+  <file path="src/app/plants/plants.component.spec.ts">
+    <testCase name="PlantsComponent should create a plant" duration="24">
+      <failure message="Error">NullInjectorError: R3InjectorError(CompilerModule)[[object Object] -&gt; [object Object]]: 
+  NullInjectorError: No provider for [object Object]!
+error properties: Object({ ngTempTokenPath: null, ngTokenPath: [ '[object Object]', '[object Object]' ] })
+NullInjectorError: R3InjectorError(CompilerModule)[[object Object] -&gt; [object Object]]: 
+  NullInjectorError: No provider for [object Object]!
+    at NullInjector.get (node_modules/@angular/core/fesm2015/core.mjs:11120:1)
+    at R3Injector.get (node_modules/@angular/core/fesm2015/core.mjs:11287:1)
+    at R3Injector.get (node_modules/@angular/core/fesm2015/core.mjs:11287:1)
+    at NgModuleRef.get (node_modules/@angular/core/fesm2015/core.mjs:21832:1)
+    at TestBedRender3.inject (node_modules/@angular/core/fesm2015/testing.mjs:1720:1)
+    at Function.TestBed [as get] (node_modules/@angular/core/fesm2015/testing.mjs:1614:1)
+    at UserContext.&lt;anonymous&gt; (src/app/plants/plants.component.spec.ts:42:38)
+    at _ZoneDelegate.invoke (node_modules/zone.js/fesm2015/zone.js:372:1)
+    at ProxyZoneSpec.onInvoke (node_modules/zone.js/fesm2015/zone-testing.js:287:1)
+    at _ZoneDelegate.invoke (node_modules/zone.js/fesm2015/zone.js:371:1)
+</failure>
+    </testCase>
   </file>
 </testExecutions>
