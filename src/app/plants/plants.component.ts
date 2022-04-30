@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Plants } from '../models/plants';
 import { PlantsService } from './plants.service';
 
@@ -9,6 +9,10 @@ import { PlantsService } from './plants.service';
 })
 export class PlantsComponent implements OnInit {
   Plants: Array<Plants> = [];
+  objectKeys = Object.keys;
+  
+  @Input() titulos: any = ['#', 'Nombre Común', 'Tipo', 'Clima'];
+  
   constructor(private plantsService: PlantsService) { }
 
   getPlants(): void{
@@ -19,6 +23,7 @@ export class PlantsComponent implements OnInit {
   }
   ngOnInit() {
     this.getPlants();
+   // console.log("hola " + this.getPlants());
   }
 
 }
