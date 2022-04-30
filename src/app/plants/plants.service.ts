@@ -13,10 +13,15 @@ export class PlantsService {
     private apiUrl: string = "";
 
     constructor(private http: HttpClient) { }
+    
+    plants: Array<Plants> = [];
+
     getPlants(): Observable<Plants[]> {
       this.apiUrl = environment.baseUrl;
       return this.http.get<Plants[]>(this.apiUrl);
     }
+
+ 
   
   
   }

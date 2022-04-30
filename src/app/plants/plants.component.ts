@@ -8,9 +8,8 @@ import { PlantsService } from './plants.service';
   styleUrls: ['./plants.component.css']
 })
 export class PlantsComponent implements OnInit {
-  Plants: Array<Plants> = [];
-  objectKeys = Object.keys;
-  
+  plants: Array<Plants> = [];
+  tipoPlanta: any = {"Interior": 0, "Exterior": 0};
   @Input() titulos: any = ['#', 'Nombre Común', 'Tipo', 'Clima'];
   
   constructor(private plantsService: PlantsService) { }
@@ -18,12 +17,25 @@ export class PlantsComponent implements OnInit {
   getPlants(): void{
     this.plantsService.getPlants()
     .subscribe((plantas) => {
-      this.Plants = plantas;
-    });
+      this.plants = plantas;
+      this.getTipoPlanta(this.plants);  
+    });  
   }
+
+  getTipoPlanta(plants: Array<Plants>):void{
+    for(let planta of plants){
+      if(planta.tipo == 'Interior'){
+        this.tipoPlanta['Interior'] += 1;
+      }
+      else{
+        this.tipoPlanta['Exterior'] += 1;
+      }
+    }
+  }
+
   ngOnInit() {
     this.getPlants();
-   // console.log("hola " + this.getPlants());
+
   }
 
 }

@@ -9,7 +9,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let planta of Plants">
+                <tr *ngFor="let planta of plants">
                     <td>{{planta.id}}</td>
                     <td>{{planta.nombre_comun}}</td>
                     <td>{{planta.tipo}}</td>
@@ -18,5 +18,16 @@
             </tbody>
         </table>
     </div>
-  </div>
+</div>
+
+<div>
+    <br>
+    <div> 
+        <label igxLabel for="fullName"> Total de plantas de Interior: {{tipoPlanta.Interior}}</label>
+        <br>
+        <label igxLabel for="fullName"> Total de plantas de Exterior: {{tipoPlanta.Exterior}}</label>
+    </div>
+
+</div>  
   
+
