@@ -3,6 +3,7 @@ import { DebugElement } from '@angular/core';
 import faker from '@faker-js/faker'
 import { PlantsComponent } from './plants.component';
 import { Plants } from '../models/plants';
+import { By } from '@angular/platform-browser';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 import {HttpClientModule} from '@angular/common/http';
 
@@ -22,7 +23,7 @@ describe('PlantsComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(PlantsComponent);
     component = fixture.componentInstance;
-    //;
+ 
     component.plants = [new Plants(
       faker.datatype.number(),
       faker.lorem.sentence(),
@@ -31,16 +32,15 @@ describe('PlantsComponent', () => {
       faker.lorem.sentence(),
       faker.lorem.sentence(),
       faker.lorem.sentence()
-
-    ),
-  ];
+  ),    
+ ];
   fixture.detectChanges()
-  //debug = fixture.debugElement;
+  debug = fixture.debugElement;
   });
 
-  it('should create a plant', () => {
-    const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('h1').textContent).toContain('hola');
+  it('should display a 3 plants', () => {
+    const compiled = debug.queryAll(By.css('table'));
+    expect(compiled.length).toBe(1);
    // expect(component.getPlants.length == 0 )
   });
 });
